@@ -1,7 +1,9 @@
-import reducers from './reducers'
+import {reducer} from './reducers'
 
 
-export const initialState = {
+
+
+const initialState = {
     other: '...',
     cart: [],
     products: [],
@@ -10,6 +12,6 @@ export const initialState = {
 }
 
 export {
-    reducers,
+    reducer,
     initialState
 }
