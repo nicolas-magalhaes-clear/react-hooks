@@ -1,19 +1,10 @@
-export default function reducer(state, action) {
+import {numberReducer} from './number'
+import userReducer from './user';
 
-    switch (action.type) {
+export function reducer(state, action) {
 
-        case 'number_add2':
-            return ({ ...state, number: state.number + 2 })
-        case 'login':
-            return ({ ...state, user: { name: action.payload } })
-        case 'numberDiv25':
-            return ({...state, number: state.number / 25})
-        case 'numberInt':
-            return({...state, number: parseInt(state.number)})
-        case 'addNumberN':
-            return({...state, number: state.number + action.payload})
-        default:
-            return state
-    }
+
+    let newState = numberReducer(state,action);
+    return userReducer(newState, action)
 
 }
